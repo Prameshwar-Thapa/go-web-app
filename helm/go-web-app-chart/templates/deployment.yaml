@@ -1,4 +1,3 @@
-# This is a sample deployment manifest file for a simple web application.
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -17,6 +16,6 @@ spec:
     spec:
       containers:
       - name: go-web-app
-        image: prameshwar884/go-web-app: {{ Values.image.tag }}
+        image: "prameshwar884/go-web-app:{{ .Values.image.tag }}"  # Fixed line
         ports:
         - containerPort: 9095
